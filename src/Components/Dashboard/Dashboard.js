@@ -4,8 +4,10 @@ import Product from '../Product/Product';
 
 
 class Dashboard extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
+
     }
 
 
@@ -15,11 +17,21 @@ class Dashboard extends Component {
 
 
     render() {
+        let mappedInventory = this.props.inventory.map(elem => {
         return(
-            <div>
-            <div>Dashboard</div>
-            <Product />
-            </div>
+                <div>
+                <div>Dashboard</div>
+                <Product />
+                </div>
+            )
+        });
+    
+
+        return (
+            
+                <div>
+                {mappedInventory}
+                </div>
         )
     }
 }
